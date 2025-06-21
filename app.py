@@ -38,7 +38,10 @@ def create_vector_store(docs_folder="docs"):
         final_documents = text_splitter.split_documents(docs)
 
         # Using a locally-runnable, open-source embedding model
-        embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2",
+            model_kwargs={'device': 'cpu'}
+        )
         
         vectors = FAISS.from_documents(final_documents, embeddings)
     

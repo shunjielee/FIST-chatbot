@@ -6,4 +6,5 @@ python-dotenv
 faiss-cpu
 langchain-community
 pypdf
-sentence-transformers 
+sentence-transformers
+langchain-huggingface 
